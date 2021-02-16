@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ViewRecipe({ showRecipe, setShowRecipe, recipe }) {
-    const [favs, setFavs] = useState([]);
-    const url = 'https://forkify-api.herokuapp.com/api/get?rId=47746' //`https://forkify-api.herokuapp.com/api/get?rId=${recipe_id}`
+    const url = `https://forkify-api.herokuapp.com/api/get?rId=${recipe_id}`
 
     // useEffect(() => {
     //     async function getData() {
