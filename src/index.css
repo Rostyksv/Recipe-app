@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+  list-style-type: none;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,8 +10,227 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fullApp {
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.App{
+  max-width: 1170px;
+  min-height: 100vh;
+  margin: 0 auto;
+  
+}
+.header-container{
+  background-color: #2c3e50;
+  height: 100px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-items{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1070px;
+  border: 1px solid red;
+}
+.header-container p{
+  color: whitesmoke;
+  font-size: 30px;
+}
+.fav{
+  color: white;
+}
+.btns-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.btns-container button{
+  background-color: transparent;
+  border: 3px solid hsl(240, 44%, 24%);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  margin-right: 10px;
+  transition: all 0.5s;
+  color:white;
+}
+
+.header-container a{
+  background-color: transparent;
+  border: 3px solid hsl(274, 11%, 28%);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  margin-right: 10px;
+  transition: all 0.5s;
+  color:white;
+}
+.btns-container button:hover{
+  text-decoration: none;
+  color: white;
+  border: 3px solid hsl(0, 88%, 49%);
+}
+.form-select{
+  background-color: hsl(274, 11%, 28%);
+  border: 3px solid hsl(274, 11%, 28%);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  outline: none;
+  transition: all 0.5s;
+}
+.form-select:hover{
+  border: 3px solid hsl(0, 88%, 49%);
+}
+.input-container{
+  max-width: 1170px;
+  margin: 0 auto;
+  text-align: center;
+}
+.input{
+  width: 50%;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+.recipe-grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 10px;
+}
+.recipe-cont{
+  border-radius: 10px;
+  background-color: whitesmoke;
+  width: 350px;
+  height: 100%;
+  box-shadow: -3px 3px black;
+  transition: all 0.5s;
+}
+.recipe-cont:hover{
+  transform: translate(5px, -5px);
+  box-shadow: -5px 5px black;
+}
+
+@media all and (max-width:1200px) {
+  .recipe-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width:770px) {
+  .recipe-grid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    justify-content: center;
+  }
+}
+.img-container{
+  text-align: center;
+}
+.img{
+  width: 100%;
+  height: 300px;
+}
+.byBtn{
+  margin: 0 auto;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.byBtn button {
+  margin-bottom: 20px;
+  border: 2px solid hsl(0, 88%, 49%);
+}
+.btn-container{
+  margin: 0 auto;
+}
+
+.home-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.fav-text{
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ViewRecipe-overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: -1;
+  visibility: hidden;
+}
+.ViewRecipe-show{
+  visibility: visible;
+  z-index: 10;
+}
+.ViewRecipe-cont{
+  background: white;
+  border-radius: 10px;
+  width: 500px;
+  min-height: 50vh;
+}
+.ViewRecipe-cont button{
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(65, 243, 11);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.Recipe-top{
+  position: relative;
+}
+.Recipe-top img{
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.Recipe-top button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.ingredients-cont{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.ingredients-cont p{
+  width: 150px;
+  min-height: 50px;
+  position: relative;
+  display: flex;
+  font-size: 16px;
+}
+.ingredients-cont p::before {
+  content: '\2713';
+  margin-right: 10px;
 }
